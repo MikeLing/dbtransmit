@@ -1,0 +1,26 @@
+{
+    "dev":{
+        "host":"aaa",
+        "port":3306,
+        "user":"aaa",
+        "password":"aaa",
+        "database":"aaa",
+        "charset":"utf8"
+        },
+    "localhost":{
+        "host":"localhost",
+        "port":3306,
+        "user":"root",
+        "password":"123456",
+        "database":"ifs_test1",
+        "charset":"utf8"
+        },
+    "sit":{
+        "host":"ccc",
+        "port":3306,
+        "user":"ccc",
+        "password":"ccc",
+        "database":"ccc",
+        "charset":"utf8"
+        }
+}
