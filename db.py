@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*-
+
 import os
 import pdb
 import json
@@ -15,7 +17,7 @@ class MysqlConnector(object):
 
     @staticmethod
     def set_config(file_name="config"):
-        with open(file_name,"r",encoding="utf-8") as f:
+        with open(file_name, "r") as f:
             MysqlConnector.config = json.load(f)
     
     @staticmethod
@@ -27,7 +29,8 @@ class MysqlConnector(object):
     def conn_mysql(host, port, user, password, database, charset="utf-8"):
         """Connetct to mysql"""
         try:
-            MysqlConnector.conn = MySQLdb.connect(host=host, port=port, user=user, password=password, database=database, charset=charset)
+            # pdb.set_trace()
+            MysqlConnector.conn = MySQLdb.connect(host=host, user=user, passwd=password, db=database)
             MysqlConnector.cur = MysqlConnector.conn.cursor()
 
         except Exception as e:
