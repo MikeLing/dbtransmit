@@ -2,6 +2,7 @@ import os
 import pdb
 import json
 import logging
+import MySQLdb
 
 def execute_sql(conn, cur, path):
     os.chdir(path)
@@ -37,10 +38,10 @@ class Connect_mysql:
             config = json.load(f)
         return config
 
-    def conn_mysql(self, host, port, usr, password, database, charset="utf-8"):
+    def conn_mysql(self, host, port, user, password, database, charset="utf-8"):
         """Connetct to mysql"""
         try:
-            conn = pymysql.connect(host=host, port=port, user=user, password=password, database=database, charset=charset)
+            conn = MySQLdb.connect(host=host, port=port, user=user, password=password, database=database, charset=charset)
             cur = conn.cursor()
             return conn, cur
 
